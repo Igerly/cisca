@@ -11,8 +11,10 @@ object MockTasks {
   }
   
   def transaction(trans: (Client, Client, Int)) = {
+    val (creditor, beneficiary, value) = trans
+    
     Thread.sleep(500)
     
-    println(s"Transfered ${trans._3} from ${trans._1} to ${trans._2}")
+    println(s"Transfered ${value}$$ from ${creditor} to ${beneficiary}")
   }
 }
