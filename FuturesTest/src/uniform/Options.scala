@@ -2,14 +2,15 @@ package uniform
 
 object Options extends App {
   
-    def mapReduce() = {
-    val list = Option(423)
-    val concat = list.map(_.toString)
-      .filter(_.length() > 1)
-      .reduce((s1, s2) => s"$s1, $s2")
-    println(concat)
+    def mapFilter() = {
+    val option = Option(423)
+    val isOdd = option.map(_ % 2)
+      .filter(_ == 1)
+      .nonEmpty
+      
+    println(isOdd)
   }
   
-  mapReduce()
+  mapFilter()
 
 }
