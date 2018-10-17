@@ -11,7 +11,7 @@ class TaskScheduler {
       task.unitOfWork.apply(argument)
     }
 
-    taskResult.onSuccess { case _ =>
+    taskResult.onComplete { case _ =>
       println(s"[${Calendar.getInstance().getTime()}] Completed: ${task.name}($argument)")
     }
 
